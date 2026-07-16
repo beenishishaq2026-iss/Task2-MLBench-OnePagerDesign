@@ -5,6 +5,7 @@ import Services from './components/Services'
 import Team from './components/Team'
 import Biography from './components/Biography'
 import Clients from './components/Clients'
+import Stats from './components/Stats'
 
 function App(){
   return(
@@ -16,6 +17,7 @@ function App(){
       <Team/>
       <Biography/>
       <Clients/>
+      <Stats/>
     </div>
   )
 }
