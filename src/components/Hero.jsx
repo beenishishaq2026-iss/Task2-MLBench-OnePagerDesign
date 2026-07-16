@@ -9,8 +9,8 @@ export default function Hero(){
         }}
     >
         <div className="max-w-2xl">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4">
-          Welcome to onepager
+        <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wide mb-6 leading-tight">
+          WELCOME TO ONEPAGER
         </h1>
         <p className="text-gray-200 mb-8">
           we design and develop awesome websites and smart applications, impactful identities using the latest
