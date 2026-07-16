@@ -7,6 +7,8 @@ import Biography from './components/Biography'
 import Clients from './components/Clients'
 import Stats from './components/Stats'
 import Blog from './components/Blog'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 function App(){
   return(
@@ -20,6 +22,8 @@ function App(){
       <Clients/>
       <Stats/>
       <Blog/>
+      <Contact/>
+      <Footer/>
     </div>
   )
 }
