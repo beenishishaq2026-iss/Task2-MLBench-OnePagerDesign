@@ -3,7 +3,8 @@ import Hero from './components/Hero'
 import Portfolio from './components/Portfolio'
 import Services from './components/Services'
 import Team from './components/Team'
-import Biography from './components/Biograpghy'
+import Biography from './components/Biography'
+import Clients from './components/Clients'
 
 function App(){
   return(
@@ -14,6 +15,7 @@ function App(){
       <Services/>
       <Team/>
       <Biography/>
+      <Clients/>
     </div>
   )
 }
