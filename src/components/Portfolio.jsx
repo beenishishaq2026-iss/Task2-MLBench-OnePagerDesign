@@ -18,7 +18,8 @@ export default function Portfolio() {
     <section id="portfolio-section" className="py-20 px-4 bg-white">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-2">Our Portfolio</h2>
-        <p className="text-gray-500 mb-8">
+        <p className="text-gray-500 mb-8">git add .
+git commit -m "Add Portfolio section"
           This is Photoshop's version of Beautiful Styles By Beenish Ishaq</p>
 
         <div className="flex flex-wrap justify-center gap-3 mb-10 text-sm font-semibold">
