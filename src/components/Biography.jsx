@@ -1,24 +1,24 @@
 export default function Biography() {
   return (
-    <section id="about-section" className="py-20 px-4 bg-gray-50">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-1">Company Biography</h2>
-        <p className="text-orange-500 font-semibold mb-2">Short story about us</p>
+    <section id="about-section" className="py-20 px-4 bg-white">
+      <div className="max-w-2xl">
+        <h2 className="text-3xl font-bold mb-3 uppercase tracking-wide">Company Biography</h2>
+        <span className="inline-block bg-teaal-500 text-white text-sm font-semibold px-4 py-2 mb-8 uppercase tracking-wide">
+          Short story about us
+        </span>
 
-        <div className="max-w-3xl mx-auto text-gray-600 text-sm leading-relaxed space-y-4 mt-6">
+        <div className="text-gray-500 text-sm leading-relaxed space-y-4">
           <p>
-            This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor
-            aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit
+            This is <strong className="text-teal-600">Photoshop's</strong> Great Comapny with great desins by our author Beenish Ishaq
           </p>
           <p>
-            Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-            ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris
-            vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos.
+            We started this company with a simple idea: great design should be
+            accessible to everyone, not just large brands with big budgets. <strong className="text-teal-600">Mern Developer Styles</strong> 
           </p>
           <p>
-            Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a
-            augue. Sed non
+            Today, we're proud to have worked with businesses of all sizes,
+            across many industries, and we're always excited to take on new
+            challenges.
           </p>
         </div>
       </div>
