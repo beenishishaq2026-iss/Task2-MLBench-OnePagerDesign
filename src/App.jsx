@@ -6,6 +6,7 @@ import Team from './components/Team'
 import Biography from './components/Biography'
 import Clients from './components/Clients'
 import Stats from './components/Stats'
+import Blog from './components/Blog'
 
 function App(){
   return(
@@ -18,6 +19,7 @@ function App(){
       <Biography/>
       <Clients/>
       <Stats/>
+      <Blog/>
     </div>
   )
 }
