@@ -7,14 +7,25 @@ const logos = [
 
 export default function Clients() {
   return (
-    <section className="py-20 px-4 bg-gray-50">
+    
+    <section className="w-full py-20 px-4 bg-gray-50">
+
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-2">Our Clients</h2>
-        <p className="text-gray-500 mb-10">Trusted by businesses and creative teams</p>
+
+        <h2 className="text-3xl font-bold mb-3 uppercase tracking-wide">
+          Our Clients
+        </h2>
+
+        <span className="inline-block bg-teal-500 text-white text-sm font-semibold px-4 py-2 mb-10 uppercase tracking-wide">
+          We love our clients
+        </span>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {logos.map((logo, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg shadow flex items-center justify-center">
+            <div
+              key={index}
+              className="bg-teal-500 h-40 rounded-sm shadow flex items-center justify-center"
+            >
               <img
                 src={logo}
                 alt="Client logo"
