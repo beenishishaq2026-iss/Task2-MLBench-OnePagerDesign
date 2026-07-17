@@ -7,8 +7,7 @@ This project was developed as part of my frontend development practice to improv
 
 ## 🌐 Live Demo
 
-🔗 Add your deployed Vercel link here
-
+🔗 **Live Website:** https://task2-ml-bench-one-pager-design-w6j.vercel.app/
 ---
 
 ## 📌 Project Overview
