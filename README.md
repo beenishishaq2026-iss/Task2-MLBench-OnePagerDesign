@@ -7,7 +7,7 @@ This project was developed as part of my frontend development practice to improv
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:** https://task2-ml-bench-one-pager-design-w6j.vercel.app/
+🔗 **Live Website:** https://task2-ml-bench-one-pager-design-5gv.vercel.app/
 
 🔗 **Source Code:** https://github.com/beenishishaq2026-iss/Task2-MLBench-OnePagerDesign
 
