@@ -4,7 +4,6 @@ import Portfolio from './components/Portfolio'
 import Services from './components/Services'
 import Team from './components/Team'
 import Biography from './components/Biography'
-import Clients from './components/Clients'
 import Stats from './components/Stats'
 import Blog from './components/Blog'
 import Contact from './components/Contact'
@@ -19,7 +18,6 @@ function App(){
       <Services/>
       <Team/>
       <Biography/>
-      <Clients/>
       <Stats/>
       <Blog/>
       <Contact/>

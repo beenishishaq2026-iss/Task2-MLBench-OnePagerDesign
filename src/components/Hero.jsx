@@ -2,31 +2,53 @@ export default function Hero() {
   return (
     <section
       id="home-section"
-      className="flex items-center justify-center min-h-screen bg-gray-900 text-white text-center px-4"
+      className="relative flex items-center justify-center min-h-screen bg-gray-900 text-white text-center px-4 bg-cover bg-center"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5))",
+          "linear-gradient(rgba(15,23,32,0.55), rgba(15,23,32,0.55)), url('/images/hero-bg.jpg')",
       }}
     >
-      <div className="max-w-2xl">
+      <a
+        href="#"
+        aria-label="Previous slide"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white"
+      >
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M19 12H5M11 18l-6-6 6-6" />
+        </svg>
+      </a>
+
+      <div className="max-w-3xl font-mono">
 
         <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-wide mb-6 leading-tight">
-          WELCOME TO ONEPAGER
+          Welcome to <span className="text-teal-400">One</span>pager
         </h1>
 
-        <p className="text-gray-200 mb-8">
-          We design and develop awesome websites and smart applications,
-          impactful identities using the latest technologies.
+        <p className="text-gray-300 mb-8 leading-relaxed">
+          we design and develop awesome websites and smart applications,
+          impactful identities using the latest
         </p>
 
         <a
           href="#portfolio-section"
-          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded"
+          className="relative inline-block"
         >
-          Learn More
+          <span className="block bg-teal-500 text-white font-bold uppercase tracking-wide text-sm px-10 py-4 transform -skew-x-12">
+            <span className="inline-block transform skew-x-12">Learn More</span>
+          </span>
         </a>
 
       </div>
+
+      <a
+        href="#"
+        aria-label="Next slide"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white"
+      >
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+      </a>
     </section>
   );
 }

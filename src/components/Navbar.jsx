@@ -1,27 +1,58 @@
+import { useState, useEffect } from 'react'
+
 export default function Navbar() {
+
+  const [open, setOpen] = useState(false)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const heroEl = document.getElementById('home-section')
+    const threshold = heroEl ? heroEl.offsetHeight : window.innerHeight
+
+    const handleScroll = () => {
+      setVisible(window.scrollY > threshold - 80)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const links = [
     { name: 'Home', href: '#home-section' },
     { name: 'Portfolio', href: '#portfolio-section' },
     { name: 'Services', href: '#services-section' },
     { name: 'Team', href: '#team-section' },
+    { name: 'About', href: '#about-section' },
     { name: 'Blog', href: '#blog-section' },
     { name: 'Contact Us', href: '#contact-section' },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+    visible && (
+    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50 font-mono">
+      <div className="max-w-[1600px] mx-auto flex items-center justify-between px-6 lg:px-10 py-6">
 
-        <a href="#home-section">
-          <img
-            src="https://demoxml.com/html/onepager/images/logo.png"
-            alt="Logo"
-            className="h-8"
-          />
+        <a href="#home-section" className="flex items-center gap-3">
+          <span className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center shrink-0">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="white" strokeWidth="1">
+              <circle cx="12" cy="8" r="4" />
+              <circle cx="12" cy="16" r="4" />
+              <circle cx="8" cy="12" r="4" />
+              <circle cx="16" cy="12" r="4" />
+            </svg>
+          </span>
+          <span>
+            <span className="block text-2xl font-bold tracking-wide text-gray-900">
+              ONE<span className="font-normal">PAGER</span>
+            </span>
+            <span className="block text-xs text-gray-400 tracking-wide">
+              creative single page template
+            </span>
+          </span>
         </a>
 
-        <ul className="flex gap-6 text-sm font-semibold text-gray-700">
+        <ul className="hidden lg:flex items-center gap-8 text-base tracking-wide text-gray-800 uppercase">
           {links.map((link) => (
             <li key={link.name}>
               <a href={link.href}>
@@ -31,7 +62,35 @@ export default function Navbar() {
           ))}
         </ul>
 
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+          className="lg:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8"
+        >
+          <span className="block w-6 h-0.5 bg-gray-800" />
+          <span className="block w-6 h-0.5 bg-gray-800" />
+          <span className="block w-6 h-0.5 bg-gray-800" />
+        </button>
+
       </div>
+
+      {open && (
+        <ul className="lg:hidden bg-white border-t px-6 py-4 space-y-4 text-base tracking-wide text-gray-800 uppercase">
+          {links.map((link) => (
+            <li key={link.name}>
+              <a
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block"
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
+    )
   );
 }
