@@ -1,9 +1,20 @@
 import { useState, useEffect } from 'react'
 
+const links = [
+  { name: 'Home', href: '#home-section', id: 'home-section' },
+  { name: 'Portfolio', href: '#portfolio-section', id: 'portfolio-section' },
+  { name: 'Services', href: '#services-section', id: 'services-section' },
+  { name: 'Team', href: '#team-section', id: 'team-section' },
+  { name: 'About', href: '#about-section', id: 'about-section' },
+  { name: 'Blog', href: '#blog-section', id: 'blog-section' },
+  { name: 'Contact Us', href: '#contact-section', id: 'contact-section' },
+];
+
 export default function Navbar() {
 
   const [open, setOpen] = useState(false)
   const [visible, setVisible] = useState(false)
+  const [active, setActive] = useState('home-section')
 
   useEffect(() => {
     const heroEl = document.getElementById('home-section')
@@ -18,15 +29,28 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const links = [
-    { name: 'Home', href: '#home-section' },
-    { name: 'Portfolio', href: '#portfolio-section' },
-    { name: 'Services', href: '#services-section' },
-    { name: 'Team', href: '#team-section' },
-    { name: 'About', href: '#about-section' },
-    { name: 'Blog', href: '#blog-section' },
-    { name: 'Contact Us', href: '#contact-section' },
-  ];
+  // scroll-spy: highlight the nav link for the section currently in view
+  useEffect(() => {
+    const sections = links
+      .map((link) => document.getElementById(link.id))
+      .filter(Boolean)
+
+    if (!sections.length) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    )
+
+    sections.forEach((section) => observer.observe(section))
+    return () => observer.disconnect()
+  }, [])
 
   return (
     visible && (
@@ -55,7 +79,15 @@ export default function Navbar() {
         <ul className="hidden lg:flex items-center gap-8 text-base tracking-wide text-gray-800 uppercase">
           {links.map((link) => (
             <li key={link.name}>
-              <a href={link.href}>
+              <a
+                href={link.href}
+                className={`relative pb-1 transition-colors duration-300 hover:text-teal-500
+                  after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:bg-teal-500
+                  after:transition-all after:duration-300
+                  ${active === link.id
+                    ? 'text-teal-500 after:w-full'
+                    : 'after:w-0 hover:after:w-full'}`}
+              >
                 {link.name}
               </a>
             </li>
@@ -82,7 +114,9 @@ export default function Navbar() {
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block"
+                className={`block transition-colors duration-300 hover:text-teal-500 ${
+                  active === link.id ? 'text-teal-500 font-semibold' : ''
+                }`}
               >
                 {link.name}
               </a>
