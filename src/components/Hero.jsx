@@ -43,8 +43,7 @@ export default function Hero() {
   const goPrev = useCallback(() => {
     setCurrent((i) => (i - 1 + slides.length) % slides.length);
   }, []);
-
-  // autoplay, resets whenever the slide changes (e.g. from a manual click)
+  
   useEffect(() => {
     const timer = setInterval(goNext, 6000);
     return () => clearInterval(timer);

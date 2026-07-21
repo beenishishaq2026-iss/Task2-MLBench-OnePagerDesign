@@ -43,7 +43,6 @@ export default function Portfolio() {
               This is Photoshop's version of Beautiful Styles By Beenish Ishaq
             </p>
 
-            {/* Filter tabs */}
             <div className="flex flex-wrap justify-center items-center">
               {filters.map((f) =>
                 active === f ? (
@@ -68,7 +67,6 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Masonry grid */}
         <div className="py-16">
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-2 text-left">
             {filtered.map((project, i) => (

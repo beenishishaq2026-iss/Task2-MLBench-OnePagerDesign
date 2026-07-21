@@ -22,9 +22,6 @@ body {
   background-color: rgba(28, 35, 46, 0.15);
 }
 
-/* Reusable skewed CTA button — used on Hero and repeated in later sections (Services, Contact).
-   Font is NOT hard-coded here so it inherits from whichever section it's used in
-   (Hero uses monospace for its caption; other sections will use the Open Sans body font). */
 .btn-primary {
   @apply inline-block bg-teal text-white font-bold uppercase tracking-[0.15em] text-sm px-12 py-5 -skew-x-12 transition-colors duration-300 hover:bg-white hover:text-dark;
 }
