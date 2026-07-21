@@ -15,7 +15,7 @@ export default function Biography() {
             <h2 className="text-4xl font-bold mb-4 uppercase tracking-wide text-gray-900">
               Company Biography
             </h2>
-            <span className="inline-block bg-teal-500 text-white text-sm px-4 py-2 mb-8 uppercase tracking-wide">
+            <span className="inline-block bg-teal text-white text-sm px-4 py-2 mb-8 uppercase tracking-wide">
               Short story about us
             </span>
 
@@ -32,7 +32,7 @@ export default function Biography() {
                 established brands alike, building everything from quick
                 landing pages to full product sites. We care about the
                 details as much as the big picture, and we believe good
-                design should be <strong className="text-teal-500">simple, honest, and easy to use</strong>.
+                design should be <strong className="text-teal">simple, honest, and easy to use</strong>.
               </p>
               <p>
                 Got a project in mind? We'd love to hear about it.
@@ -53,7 +53,7 @@ export default function Biography() {
               </div>
             </div>
 
-            <span className="inline-block bg-teal-500 text-white text-sm px-4 py-2 mb-8 uppercase tracking-wide">
+            <span className="inline-block bg-teal text-white text-sm px-4 py-2 mb-8 uppercase tracking-wide">
               We love our clients
             </span>
 
@@ -61,7 +61,7 @@ export default function Biography() {
               {logos.map((logo) => (
                 <div
                   key={logo.alt}
-                  className="bg-teal-500 h-44 flex items-center justify-center p-8 rounded"
+                  className="bg-teal h-44 flex items-center justify-center p-8 rounded"
                 >
                   <img
                     src={logo.src}

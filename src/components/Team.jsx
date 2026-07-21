@@ -39,11 +39,12 @@ export default function Team() {
   return (
     <section
       id="team-section"
-      className="relative py-16 md:py-20 bg-gray-900 bg-cover bg-center bg-scroll md:bg-fixed"
+      
+      className="relative py-16 md:py-20 bg-gray-900 bg-cover bg-center bg-scroll"
       style={{
-        backgroundImage:
-          "linear-gradient(rgba(10,14,20,0.82), rgba(10,14,20,0.82)), url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1600&q=60')",
-      }}
+  backgroundImage:
+    "linear-gradient(rgba(10,14,20,0.82), rgba(10,14,20,0.82)), url('/images/maxresdefault.jpg')",
+}}
     >
       <div className="text-center relative font-mono px-4">
         <h2 className="text-3xl md:text-5xl font-bold mb-3 uppercase tracking-wide text-white">

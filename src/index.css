@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 @import "tailwindcss";
 
 html {
@@ -10,10 +11,12 @@ section[id$="-section"] {
 
 @theme {
   --font-body: "Open Sans", sans-serif;
-  --color-teal: #2dccd3;
+  --font-mono: "Courier Prime", "Courier New", Courier, monospace;
+  --color-teal: #2bb6b6;
+  --color-teal-alt: #54babb;
+  --color-submit: #1ab5b3;
   --color-dark: #1c232e;
 }
-
 body {
   font-family: var(--font-body);
 }
