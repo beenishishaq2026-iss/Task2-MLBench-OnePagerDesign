@@ -1,37 +1,16 @@
 import { useRef } from 'react'
+import { Share2, MessageCircle, Rss, Globe, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const team = [
-  { name: 'Owen Miller', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team1.jpg' },
-  { name: 'Mike William', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team2.jpg' },
-  { name: 'Besim Dauti', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team3.jpg' },
-  { name: 'Faton Avdiu', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team4.jpg' },
-  { name: 'Owen Miller', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team1.jpg' },
-  { name: 'Mike William', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team2.jpg' },
-  { name: 'Besim Dauti', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team3.jpg' },
-  { name: 'Faton Avdiu', role: 'developer', img: 'https://demoxml.com/html/onepager/upload/team4.jpg' },
+  { name: 'Owen Miller', role: 'developer', img: '/images/team1.jpg' },
+  { name: 'Mike William', role: 'developer', img: '/images/team2.jpg' },
+  { name: 'Besim Dauti', role: 'developer', img: '/images/team3.jpg' },
+  { name: 'Faton Avdiu', role: 'developer', img: '/images/team4.jpg' },
+  { name: 'Owen Miller', role: 'developer', img: '/images/team1.jpg' },
+  { name: 'Mike William', role: 'developer', img: '/images/team2.jpg' },
+  { name: 'Besim Dauti', role: 'developer', img: '/images/team3.jpg' },
+  { name: 'Faton Avdiu', role: 'developer', img: '/images/team4.jpg' },
 ];
-
-const FacebookIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12" />
-  </svg>
-)
-const TwitterIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M22 5.9c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.4 1.8-2.4-.8.5-1.7.8-2.7 1a4.2 4.2 0 0 0-7.2 3.8A11.9 11.9 0 0 1 3 4.9a4.2 4.2 0 0 0 1.3 5.6c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1-.6.1-1.2.2-1.8.1.5 1.7 2 2.9 3.9 2.9A8.4 8.4 0 0 1 2 18.9a11.9 11.9 0 0 0 6.4 1.9c7.7 0 11.9-6.4 11.9-11.9v-.5c.8-.6 1.5-1.3 2-2.1z" />
-  </svg>
-)
-const RssIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-    <circle cx="6.2" cy="17.8" r="2.2" />
-    <path d="M3 10.5v3.3c4.6 0 8.3 3.7 8.3 8.2h3.3C14.6 15.7 9.3 10.5 3 10.5M3 4v3.3c8.1 0 14.7 6.6 14.7 14.7H21C21 11.9 13.1 4 3 4" />
-  </svg>
-)
-const GooglePlusIcon = () => (
-  <svg width="16" height="12" viewBox="0 0 32 24" fill="currentColor">
-    <text x="0" y="17" fontSize="16" fontFamily="Arial, sans-serif" fontWeight="bold">g+</text>
-  </svg>
-)
 
 const ArrowButton = ({ dir, onClick, position }) => (
   <button
@@ -42,9 +21,7 @@ const ArrowButton = ({ dir, onClick, position }) => (
       bg-black/25 text-white items-center justify-center
       ${position === 'left' ? 'left-0' : 'right-0'}`}
   >
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      {dir === -1 ? <path d="M15 18l-6-6 6-6" /> : <path d="M9 18l6-6-6-6" />}
-    </svg>
+    {dir === -1 ? <ChevronLeft size={22} strokeWidth={2} /> : <ChevronRight size={22} strokeWidth={2} />}
   </button>
 )
 
@@ -74,7 +51,7 @@ export default function Team() {
         </h2>
 
         <p className="text-gray-300 mb-10 md:mb-14 text-sm md:text-base">
-          This is Photoshop's version of Lorem Ipsum. Proin gravida
+          This is Photoshop's version of Art pictures
         </p>
       </div>
 
@@ -98,7 +75,7 @@ export default function Team() {
               />
 
               <div className="bg-[#12161d] px-6 py-4">
-                <h3 className="font-bold text-lg text-white">
+                <h3 className="font-bold text-xl text-white">
                   {member.name}
                 </h3>
                 <p className="text-gray-400 text-sm">
@@ -107,17 +84,17 @@ export default function Team() {
               </div>
 
               <div className="bg-teal-500 px-6 py-4 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full border-2 border-white text-white flex items-center justify-center">
-                  <FacebookIcon />
+                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
+                  <Share2 size={14} strokeWidth={2.25} />
                 </span>
-                <span className="w-8 h-8 rounded-full border-2 border-white text-white flex items-center justify-center">
-                  <TwitterIcon />
+                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
+                  <MessageCircle size={14} strokeWidth={2.25} />
                 </span>
-                <span className="w-8 h-8 rounded-full border-2 border-white text-white flex items-center justify-center">
-                  <RssIcon />
+                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
+                  <Rss size={14} strokeWidth={2.25} />
                 </span>
-                <span className="w-8 h-8 rounded-full border-2 border-white text-white flex items-center justify-center">
-                  <GooglePlusIcon />
+                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
+                  <Globe size={14} strokeWidth={2.25} />
                 </span>
               </div>
             </div>

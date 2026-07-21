@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Aperture, Menu, X } from 'lucide-react'
 
 const links = [
   { name: 'Home', href: '#home-section', id: 'home-section' },
@@ -28,8 +29,7 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  // scroll-spy: highlight the nav link for the section currently in view
+  
   useEffect(() => {
     const sections = links
       .map((link) => document.getElementById(link.id))
@@ -59,12 +59,7 @@ export default function Navbar() {
 
         <a href="#home-section" className="flex items-center gap-3">
           <span className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center shrink-0">
-            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="white" strokeWidth="1">
-              <circle cx="12" cy="8" r="4" />
-              <circle cx="12" cy="16" r="4" />
-              <circle cx="8" cy="12" r="4" />
-              <circle cx="16" cy="12" r="4" />
-            </svg>
+            <Aperture size={30} strokeWidth={1} color="white" />
           </span>
           <span>
             <span className="block text-2xl font-bold tracking-wide text-gray-900">
@@ -76,33 +71,37 @@ export default function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden lg:flex items-center gap-8 text-base tracking-wide text-gray-800 uppercase">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className={`relative pb-1 transition-colors duration-300 hover:text-teal-500
-                  after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:bg-teal-500
-                  after:transition-all after:duration-300
-                  ${active === link.id
-                    ? 'text-teal-500 after:w-full'
-                    : 'after:w-0 hover:after:w-full'}`}
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
+        <ul className="hidden lg:flex items-center gap-1 text-base tracking-wide text-gray-800 uppercase">
+          {links.map((link) =>
+            active === link.id ? (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  className="block bg-teal-500 text-white px-5 py-3 -skew-x-12"
+                >
+                  <span className="inline-block skew-x-12">{link.name}</span>
+                </a>
+              </li>
+            ) : (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  className="block px-5 py-3 hover:text-teal-500"
+                >
+                  {link.name}
+                </a>
+              </li>
+            )
+          )}
         </ul>
 
         <button
           type="button"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
-          className="lg:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8"
+          className="lg:hidden flex items-center justify-center w-8 h-8 text-gray-800"
         >
-          <span className="block w-6 h-0.5 bg-gray-800" />
-          <span className="block w-6 h-0.5 bg-gray-800" />
-          <span className="block w-6 h-0.5 bg-gray-800" />
+          {open ? <X size={26} strokeWidth={2} /> : <Menu size={26} strokeWidth={2} />}
         </button>
 
       </div>

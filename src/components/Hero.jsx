@@ -1,51 +1,116 @@
+import { useState, useEffect, useCallback } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
+const slides = [
+  {
+    heading: (
+      <>
+        Welcome to <span className="font-bold text-teal">one</span>
+        <span className="font-bold text-white">pager</span>
+      </>
+    ),
+    text: "we design and develop awesome websites and smart applications, impactful identities using the latest",
+    cta: true,
+  },
+  {
+    heading: (
+      <>
+        We are great <span className="font-bold text-white">company</span>
+      </>
+    ),
+    text: "we bring together strategy, design, and code to help brands grow with confidence",
+    cta: true,
+  },
+  {
+    heading: (
+      <>
+        <span className="font-bold text-teal">one</span>
+        <span className="font-bold text-white">pager</span> is very suitable
+      </>
+    ),
+    text: "a flexible, single-page template built for creative studios, agencies, and personal portfolios alike",
+    cta: false,
+  },
+];
+
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  const goNext = useCallback(() => {
+    setCurrent((i) => (i + 1) % slides.length);
+  }, []);
+
+  const goPrev = useCallback(() => {
+    setCurrent((i) => (i - 1 + slides.length) % slides.length);
+  }, []);
+
+  // autoplay, resets whenever the slide changes (e.g. from a manual click)
+  useEffect(() => {
+    const timer = setInterval(goNext, 6000);
+    return () => clearInterval(timer);
+  }, [current, goNext]);
+
   return (
     <section
       id="home-section"
-      className="relative flex items-center justify-center min-h-screen bg-[#1f2733] text-white text-center px-4 overflow-hidden"
+      className="relative flex items-center justify-center min-h-screen text-white text-center px-4 overflow-hidden"
     >
-      <a
-        href="#"
+      <img
+        src="/images/slide.jpg"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <button
+        type="button"
         aria-label="Previous slide"
-        className="absolute left-6 md:left-16 top-1/2 -translate-y-1/2 text-white/80 hover:text-teal-400 transition-colors duration-300"
+        onClick={goPrev}
+        className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 text-white hover:text-teal transition-colors duration-300 cursor-pointer z-10"
       >
-        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M19 12H5M11 18l-6-6 6-6" />
-        </svg>
-      </a>
+        <ArrowLeft size={38} strokeWidth={2.25} />
+      </button>
 
-      <div className="max-w-4xl font-mono">
-
-        <h1 className="text-4xl md:text-6xl uppercase tracking-widest mb-8 leading-tight">
-          <span className="font-light">Welcome to </span>
-          <span className="font-bold text-teal-400">One</span><span className="font-bold text-white">pager</span>
+      <div
+        key={current}
+        className="relative z-10 max-w-4xl animate-[fadeInUp_0.9s_ease-out]"
+      >
+        <h1 className="text-4xl md:text-6xl uppercase tracking-wide mb-8 leading-tight font-normal">
+          {slides[current].heading}
         </h1>
 
-        <p className="text-gray-400 mb-10 leading-relaxed text-base md:text-lg max-w-xl mx-auto">
-          We design and develop awesome websites and smart applications,
-          impactful identities using the latest
+        <p className="text-white/70 mb-10 leading-relaxed text-base md:text-lg max-w-xl mx-auto">
+          {slides[current].text}
         </p>
 
-        <a
-          href="#portfolio-section"
-          className="relative inline-block"
-        >
-          <span className="block bg-teal-400 text-white font-bold uppercase tracking-widest text-sm px-12 py-5 transform -skew-x-12 hover:bg-teal-500 transition-colors duration-300">
-            <span className="inline-block transform skew-x-12">Learn More</span>
-          </span>
-        </a>
-
+        {slides[current].cta && (
+          <a href="#portfolio-section" className="btn-primary">
+            <span>Learn More</span>
+          </a>
+        )}
       </div>
 
-      <a
-        href="#"
+      <button
+        type="button"
         aria-label="Next slide"
-        className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 text-white/80 hover:text-teal-400 transition-colors duration-300"
+        onClick={goNext}
+        className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 text-white hover:text-teal transition-colors duration-300 cursor-pointer z-10"
       >
-        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M5 12h14M13 6l6 6-6 6" />
-        </svg>
-      </a>
+        <ArrowRight size={38} strokeWidth={2.25} />
+      </button>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-label={`Go to slide ${i + 1}`}
+            onClick={() => setCurrent(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-colors duration-300 ${
+              i === current ? "bg-teal" : "bg-white/50 hover:bg-white/80"
+            }`}
+          />
+        ))}
+      </div>
     </section>
   );
 }
