@@ -12,11 +12,11 @@ export default function Stats() {
     <section className="py-20 px-4 bg-white font-mono border-t border-gray-100">
       <div className="max-w-7xl mx-auto text-center">
 
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-wide text-gray-900">
+        <h2 className="text-[45px] font-bold uppercase text-black mb-4 font-heading">
           Company Stats
         </h2>
 
-        <p className="text-gray-400 mb-14">
+        <p className="text-[18px] text-[#838383] mb-12 font-body">
           This is Photoshop's version of Beenish Ishaq
         </p>
 
@@ -24,13 +24,13 @@ export default function Stats() {
           {stats.map(({ number, label, icon: Icon }) => (
             <div
               key={label}
-              className="border border-gray-200 p-10"
+              className="border border-[#e4e4e4] rounded-md py-12 px-6"
             >
               <div className="text-teal-500 flex items-center justify-center mb-5">
                 <Icon size={40} strokeWidth={1.75} fill="currentColor" />
               </div>
 
-              <h3 className="text-5xl font-bold text-gray-900 mb-4">
+              <h3 className="text-5xl font-normal mb-4  text-gray-900 mb-4">
                 {number}
               </h3>
 

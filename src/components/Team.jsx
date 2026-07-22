@@ -1,5 +1,6 @@
 import { useRef } from 'react'
-import { Share2, MessageCircle, Rss, Globe, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { FaFacebookF, FaTwitter, FaRss, FaGooglePlusG } from 'react-icons/fa'
 
 const team = [
   { name: 'Owen Miller', role: 'developer', img: '/images/team1.jpg' },
@@ -40,19 +41,19 @@ export default function Team() {
     <section
       id="team-section"
       
-      className="relative py-16 md:py-20 bg-gray-900 bg-cover bg-center bg-scroll"
+      className="relative pt-[100px] pb-[35px] bg-black bg-cover bg-center bg-scroll"
       style={{
   backgroundImage:
-    "linear-gradient(rgba(10,14,20,0.82), rgba(10,14,20,0.82)), url('/images/maxresdefault.jpg')",
+    "linear-gradient(rgba(43,48,60,0.9), rgba(43,48,60,0.9)), url('/images/maxresdefault.jpg')",
 }}
     >
-      <div className="text-center relative font-mono px-4">
-        <h2 className="text-3xl md:text-5xl font-bold mb-3 uppercase tracking-wide text-white">
+      <div className="text-center relative font-mono px-4 mb-[40px]">
+        <h1 className="text-[45px] font-bold uppercase text-white mx-[10px]">
           Meet The Team
-        </h2>
+        </h1>
 
-        <p className="text-gray-300 mb-10 md:mb-14 text-sm md:text-base">
-          This is Photoshop's version of Art pictures
+        <p className="text-white text-[18px] leading-[24px] m-0">
+          This is Photoshop's version of Lorem Ipsum. Proin gravida
         </p>
       </div>
 
@@ -75,29 +76,24 @@ export default function Team() {
                 className="w-full h-72 md:h-96 object-cover"
               />
 
-              <div className="bg-[#12161d] px-6 py-4">
-                <h3 className="font-bold text-xl text-white">
+              <div className="bg-black/50 px-5 py-[17px]">
+                <h5 className="font-bold text-[20px] text-white m-0">
                   {member.name}
-                </h3>
-                <p className="text-gray-400 text-sm">
+                </h5>
+                <span className="inline-block text-[#aeaeae] text-[14px]">
                   {member.role}
-                </p>
+                </span>
               </div>
 
-              <div className="bg-teal-500 px-6 py-4 flex items-center gap-3">
-                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
-                  <Share2 size={14} strokeWidth={2.25} />
-                </span>
-                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
-                  <MessageCircle size={14} strokeWidth={2.25} />
-                </span>
-                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
-                  <Rss size={14} strokeWidth={2.25} />
-                </span>
-                <span className="w-8 h-8 rounded-full bg-white text-teal-500 flex items-center justify-center">
-                  <Globe size={14} strokeWidth={2.25} />
-                </span>
-              </div>
+              <ul className="bg-teal px-5 py-[23px] flex items-center gap-2 m-0 list-none">
+                {[FaFacebookF, FaTwitter, FaRss, FaGooglePlusG].map((Icon, idx) => (
+                  <li key={idx}>
+                    <a className="w-[30px] h-[30px] rounded-full border border-white flex items-center justify-center cursor-pointer">
+                      <Icon size={14} className="text-white" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

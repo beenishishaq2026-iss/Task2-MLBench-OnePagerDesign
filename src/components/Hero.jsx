@@ -52,7 +52,7 @@ export default function Hero() {
   return (
     <section
       id="home-section"
-      className="relative flex items-center justify-center min-h-screen text-white text-center px-4 overflow-hidden"
+      className="relative flex items-center justify-center min-h-screen text-white text-center px-4 overflow-hidden font-mono"
     >
       <img
         src="/images/slide.jpg"
@@ -73,16 +73,16 @@ export default function Hero() {
         key={current}
         className="relative z-10 max-w-4xl animate-[fadeInUp_0.9s_ease-out]"
       >
-        <h1 className="text-4xl md:text-6xl uppercase tracking-wide mb-8 leading-tight font-normal">
+        <h1 className="text-[38px] md:text-[60px] text-white uppercase font-normal leading-tight mb-8 mx-[15px]">
           {slides[current].heading}
         </h1>
 
-        <p className="text-white/70 mb-10 leading-relaxed text-base md:text-lg max-w-xl mx-auto">
+        <p className="text-white text-[20px] leading-[27px] font-normal mb-[25px] max-w-[640px] mx-auto">
           {slides[current].text}
         </p>
 
         {slides[current].cta && (
-          <a href="#portfolio-section" className="btn-primary">
+          <a href="#portfolio-section" className="btn-primary group">
             <span>Learn More</span>
           </a>
         )}

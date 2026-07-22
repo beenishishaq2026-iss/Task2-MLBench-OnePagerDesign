@@ -7,70 +7,71 @@ const logos = [
 
 export default function Biography() {
   return (
-    <section id="about-section" className="py-20 px-6 bg-gray-50 font-mono">
-      <div className="max-w-[1600px] mx-auto bg-white rounded-xl shadow-lg border border-gray-100 p-8 md:p-14">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section id="about-section" className="pt-[100px] px-6 bg-white font-mono">
+      <div className="max-w-[1170px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[30px] gap-y-16">
 
-          <div>
-            <h2 className="text-4xl font-bold mb-4 uppercase tracking-wide text-gray-900">
-              Company Biography
-            </h2>
-            <span className="inline-block bg-teal text-white text-sm px-4 py-2 mb-8 uppercase tracking-wide">
-              Short story about us
-            </span>
+          <div className="mb-[50px]">
+            <div className="mb-[40px]">
+              <h2 className="text-[35px] font-semibold uppercase text-[#181818] mb-[6px]">
+                Company Biography
+              </h2>
+              <span className="inline-block bg-teal text-white text-[18px] uppercase px-[6px]">
+                Short story about us
+              </span>
+            </div>
 
-            <div className="text-gray-400 leading-relaxed space-y-6">
-              <p>
-                We're a small team of <strong className="text-gray-900">designers</strong> and
+            <div className="text-[#8b8b8b] text-[20px] leading-[26px]">
+              <p className="mb-[20px]">
+                We're a small team of <span className="text-teal font-bold">designers</span> and
                 developers who love turning simple ideas into clean, usable
                 websites. Every project starts with listening — understanding
                 what a business actually needs before we open a single
                 design tool.
               </p>
-              <p>
+              <p className="mb-[20px]">
                 Over the years we've worked with startups, agencies, and
                 established brands alike, building everything from quick
                 landing pages to full product sites. We care about the
                 details as much as the big picture, and we believe good
-                design should be <strong className="text-teal">simple, honest, and easy to use</strong>.
+                design should be <span className="text-teal font-bold">simple, honest, and easy to use</span>.
               </p>
-              <p>
+              <p className="mb-[20px]">
                 Got a project in mind? We'd love to hear about it.
               </p>
             </div>
           </div>
 
-          <div>
-            <div className="flex items-start justify-between mb-4">
-              <h2 className="text-4xl font-bold uppercase tracking-wide text-gray-900">
+          <div className="mb-[50px]">
+            <div className="relative mb-[40px]">
+              <h2 className="text-[35px] font-semibold uppercase text-[#181818] mb-[6px]">
                 Our Clients
               </h2>
-              <div className="hidden sm:flex items-center gap-2 mt-4">
-                <span className="w-3 h-3 rounded-full bg-gray-400"></span>
-                <span className="w-3 h-3 rounded-full border border-gray-300"></span>
-                <span className="w-3 h-3 rounded-full border border-gray-300"></span>
-                <span className="w-3 h-3 rounded-full border border-gray-300"></span>
+              <span className="inline-block bg-teal text-white text-[18px] uppercase px-[6px]">
+                We love our clients
+              </span>
+
+              <div className="hidden sm:flex items-center gap-2 absolute top-1 right-0">
+                <span className="w-2.5 h-2.5 rounded-full bg-gray-400"></span>
+                <span className="w-2.5 h-2.5 rounded-full border border-gray-300"></span>
+                <span className="w-2.5 h-2.5 rounded-full border border-gray-300"></span>
+                <span className="w-2.5 h-2.5 rounded-full border border-gray-300"></span>
               </div>
             </div>
 
-            <span className="inline-block bg-teal text-white text-sm px-4 py-2 mb-8 uppercase tracking-wide">
-              We love our clients
-            </span>
-
-            <div className="grid grid-cols-2 gap-6">
+            <ul className="grid grid-cols-2 gap-[30px] p-0 m-0 list-none">
               {logos.map((logo) => (
-                <div
-                  key={logo.alt}
-                  className="bg-teal h-44 flex items-center justify-center p-8 rounded"
-                >
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-h-16 max-w-full object-contain"
-                  />
-                </div>
+                <li key={logo.alt} className="h-[149px]">
+                  <a className="flex items-center justify-center w-full h-full bg-teal">
+                    <img
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-w-full inline-block align-middle"
+                    />
+                  </a>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
         </div>
